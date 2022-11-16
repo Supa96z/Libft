@@ -6,7 +6,7 @@
 /*   By: abataill <abataill@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:46:00 by abataill          #+#    #+#             */
-/*   Updated: 2022/11/03 20:21:26 by abataill         ###   ########.fr       */
+/*   Updated: 2022/11/16 23:43:32 by abataill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	size_t	j;
 
 	i = -1;
+	if (!haystack && !n)
+		return (0);
 	if (!needle[0])
 		return ((char *)haystack);
 	while (haystack[++i] && i < n)

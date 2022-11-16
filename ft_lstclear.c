@@ -6,7 +6,7 @@
 /*   By: abataill <abataill@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 02:53:57 by abataill          #+#    #+#             */
-/*   Updated: 2022/11/08 00:35:49 by abataill         ###   ########.fr       */
+/*   Updated: 2022/11/16 23:49:00 by abataill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
 
-	if (!*lst || !del)
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{

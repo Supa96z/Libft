@@ -6,7 +6,7 @@
 /*   By: abataill <abataill@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:25:31 by abataill          #+#    #+#             */
-/*   Updated: 2022/11/06 18:27:33 by abataill         ###   ########.fr       */
+/*   Updated: 2022/11/16 23:49:39 by abataill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	int	i;
 
 	i = -1;
+	if (!s)
+		return ;
 	while (s[++i])
 		f(i, &s[i]);
 }

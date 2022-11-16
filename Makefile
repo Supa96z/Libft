@@ -63,4 +63,4 @@ $(NAME): $(SOURCES) $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
 
 bonus : $(SOURCES_BONUS) $(OBJECTS_BONUS)
-	ar rc $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
+	ar rc $(NAME) $(OBJECTS_BONUS)

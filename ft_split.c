@@ -6,17 +6,18 @@
 /*   By: abataill <abataill@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 16:59:48 by abataill          #+#    #+#             */
-/*   Updated: 2022/11/09 19:02:53 by abataill         ###   ########.fr       */
+/*   Updated: 2022/11/16 23:46:11 by abataill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_free(char **tab, int i)
+static char	**ft_free(char **tab, int i)
 {
 	while (--i >= 0)
 		free(tab[i]);
 	free(tab);
+	return (NULL);
 }
 
 static char	*cpytab(char *tab, char *s, char c)
@@ -69,6 +70,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	char	*str;
 
+	if (!s)
+		return (0);
 	str = (char *)s;
 	size = sizetab(str, c);
 	tab = malloc(sizeof(char *) * (size + 1));
@@ -81,10 +84,7 @@ char	**ft_split(char const *s, char c)
 			str++;
 		tab[i] = cpytab(tab[i], str, c);
 		if (!tab[i])
-		{
-			ft_free(tab, i);
-			return (NULL);
-		}
+			return (ft_free(tab, i));
 		str += ft_strlen(tab[i]);
 	}
 	tab[size] = 0;

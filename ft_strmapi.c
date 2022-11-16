@@ -6,7 +6,7 @@
 /*   By: abataill <abataill@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 16:51:08 by abataill          #+#    #+#             */
-/*   Updated: 2022/11/06 18:25:13 by abataill         ###   ########.fr       */
+/*   Updated: 2022/11/16 23:46:36 by abataill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = -1;
+	if (!s)
+		return (0);
 	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
 		return (NULL);
